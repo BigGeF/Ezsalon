@@ -1,0 +1,41 @@
+install yarn：
+npm install -g yarn
+at the same level make a dir call api for
+express for later use
+
+then create project：
+yarn create vite client
+choose javascript
+
+then get into client file install yarn
+yarn
+
+run the app
+yarn dev
+
+use tailwindcss like Bootstrap kind:
+yarn add tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+finish this part:
+https://tailwindcss.com/docs/guides/create-react-app
+
+then after create the navbar:
+create register and login page
+so we need the react router:
+yarn add react-router-dom
+
+after create the register and login page then in api folder create a file call index.js
+cd api folder:
+in the terminal enter: yarn add express
+
+done the registerPage. then :
+yarn add axios
+
+then go to mongoDb create a clould db
+
+then install mongoos in api
+
+when able to login and register to mongodb
+
+at token to api
