@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 const {json} = require("express");
 const jwt = require('jsonwebtoken');
 const bcryptSalt =bcrypt.genSaltSync(10);
-const jwtSecret = '132rfds2fredfdgvqwgryygfdgtwfdg';
+const jwtSecret = '132rfds2fredfd4345gvqwgr354yygfd252gtwfdg';
 app.use(express.json())
 
 app.use(cors({
@@ -28,6 +28,7 @@ app.get("/test", (req, res) => {
   res.json("test ok");
 });
 // LcCcUHMvowYVldja
+
 app.post('/register',async (req,res)=> {
   const {firstName, lastName, email, password} = req.body;
   try{
@@ -49,9 +50,9 @@ app.post('/login',async (req,res)=>{
   if(userDoc){
     const passOk = bcrypt.compareSync(password,userDoc.password)
     if(passOk){
-      jwt.sign({email:userDoc.email, id:userDoc._id},jwtSecret,{},(err,token)=>{//id in mongodb is _id
+      jwt.sign({email:userDoc.email, id:userDoc._id},jwtSecret,{},(err,token)=>{
         if(err) throw err;
-        res.cookie('token',token ).json("pass ok");
+        res.cookie('token',token ).json(userDoc);
       })
     }else{
       res.status(422).json('pass not ok');

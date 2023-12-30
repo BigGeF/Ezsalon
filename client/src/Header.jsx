@@ -1,6 +1,9 @@
 import {Link} from "react-router-dom";
+import {UserContext} from "./UserContext.jsx";
+import {useContext} from "react";
 
 export default function Header() {
+    const {user} = useContext(UserContext);
     return (
             <div>
                 <header className=' flex justify-between'>
